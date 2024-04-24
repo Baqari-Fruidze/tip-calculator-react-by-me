@@ -26,5 +26,6 @@ const Header = styled.header`
   text-align: center;
   display: flex;
   justify-content: center;
+  margin-bottom: 4rem;
 `;
 export default App;
