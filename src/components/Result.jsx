@@ -53,6 +53,11 @@ const ResetButton = styled.button`
   line-height: normal;
   border: none;
   padding: 1rem 0;
+  &:hover {
+    cursor: pointer;
+    border-radius: 5px;
+    background: #9fe8df;
+  }
   @media (min-width: 90rem) {
     border-radius: 5px;
     background: #0d686d;
