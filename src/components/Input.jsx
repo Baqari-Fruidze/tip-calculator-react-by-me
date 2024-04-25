@@ -25,14 +25,12 @@ export default function Input({
   const handleClick = (event) => {
     setPercent(parseInt(event.target.textContent));
   };
-  console.log({ people, bill, percent });
   return (
     <Biggie>
       <LabelsDiv>
         <Label>Bill</Label>
         <TwoInputs
-          type="text"
-          placeholder="142.55"
+          type="number"
           icon={dollar}
           value={bill}
           onChange={moneyAmount}
@@ -57,8 +55,7 @@ export default function Input({
       <LabelsDiv>
         <Label>Number of People</Label>
         <TwoInputs
-          type="text"
-          placeholder="5"
+          type="number"
           icon={person}
           value={people}
           onChange={personAmount}

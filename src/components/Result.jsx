@@ -1,22 +1,21 @@
 import styled from "styled-components";
 import { useState } from "react";
 
-export default function Result(
+export default function Result({
   bill,
   setBill,
   percent,
   setPercent,
   people,
-  setPeople
-) {
+  setPeople,
+}) {
   const reset = () => {
     setPercent("");
     setBill("");
     setPeople("");
   };
-  const tipPerPerson = bill;
-  console.log(tipPerPerson);
-  const totalBillPerPerson = (bill * percent) / 100 / +bill / people;
+  const tipPerPerson = (bill * percent) / 100 / people;
+  const totalBillPerPerson = bill / 2 + tipPerPerson;
   return (
     <ResultCon>
       <ResultsCont>
@@ -32,7 +31,9 @@ export default function Result(
             <TipAmount>Total</TipAmount>
             <PersonSpan>/ person</PersonSpan>
           </MiniCon>
-          <MoneySpan>{(bill * percent) / 100 / +bill / people} </MoneySpan>
+          <MoneySpan>
+            {isNaN(totalBillPerPerson) ? "0" : totalBillPerPerson}
+          </MoneySpan>
         </AmountCon>
       </ResultsCont>
 
@@ -40,7 +41,6 @@ export default function Result(
     </ResultCon>
   );
 }
-// bill + bill * (percent /100) / people
 const ResetButton = styled.button`
   border-radius: 5px;
   background: #26c2ae;
