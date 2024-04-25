@@ -20,4 +20,16 @@ export const TwoInputs = styled.input`
   background-position: left 1.9rem bottom 1.4rem;
   border: none;
   background-color: #f3f9fa;
+  @media (min-width: 90rem) {
+    &::placeholder {
+      color: #00474b;
+    }
+
+    text-align: right;
+    font-family: "Space Mono";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
 `;

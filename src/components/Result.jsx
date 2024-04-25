@@ -37,11 +37,25 @@ const ResetButton = styled.button`
   line-height: normal;
   border: none;
   padding: 1rem 0;
+  @media (min-width: 90rem) {
+    border-radius: 5px;
+    background: #0d686d;
+    color: #00474b;
+    text-align: center;
+    font-family: "Space Mono";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
 `;
 const ResultsCont = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  @media (min-width: 90rem) {
+    gap: 5.3rem;
+  }
 `;
 const TipAmount = styled.span`
   color: #fff;
@@ -68,6 +82,16 @@ const MoneySpan = styled.span`
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.667px;
+  @media (min-width: 90rem) {
+    color: #26c2ae;
+    text-align: right;
+    font-family: "Space Mono";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1px;
+  }
 `;
 const AmountCon = styled.div`
   display: flex;
@@ -85,4 +109,8 @@ const ResultCon = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+  @media (min-width: 90rem) {
+    width: 45%;
+    padding: 4rem;
+  }
 `;

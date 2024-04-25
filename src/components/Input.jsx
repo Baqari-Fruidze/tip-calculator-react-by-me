@@ -42,6 +42,9 @@ const Biggie = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+  @media (min-width: 90rem) {
+    gap: 4rem;
+  }
 `;
 const LabelsDiv = styled.div`
   display: flex;
@@ -53,4 +56,8 @@ const BtnCon = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 1.6rem;
+  @media (min-width: 90rem) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
 `;

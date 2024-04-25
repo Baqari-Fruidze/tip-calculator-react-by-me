@@ -5,7 +5,7 @@ import logo from "/images/logo.svg";
 
 function App() {
   return (
-    <>
+    <Parent>
       <Header>
         <img src={logo} alt="" />
       </Header>
@@ -13,10 +13,17 @@ function App() {
         <Input />
         <Result />
       </Common>
-    </>
+    </Parent>
   );
 }
-
+const Parent = styled.div`
+  margin: 0 auto;
+  min-height: 100vh;
+  max-width: 55rem;
+  @media (min-width: 90rem) {
+    max-width: 150rem;
+  }
+`;
 const Common = styled.div`
   border-radius: 25px 25px 0px 0px;
   background: #fff;
@@ -25,6 +32,11 @@ const Common = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+  @media (min-width: 90rem) {
+    flex-direction: row;
+    padding-left: 4.8rem;
+    justify-content: space-between;
+  }
 `;
 const Header = styled.header`
   text-align: center;
@@ -32,4 +44,5 @@ const Header = styled.header`
   justify-content: center;
   margin-bottom: 4rem;
 `;
+
 export default App;
