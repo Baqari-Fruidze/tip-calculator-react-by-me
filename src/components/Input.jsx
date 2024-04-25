@@ -15,7 +15,7 @@ export default function Input() {
         <TwoInputs type="text" placeholder="142.55" icon={dollar} />
       </LabelsDiv>
       <div>
-        <Label>Select Tip %</Label>
+        <Label type={"select"}>Select Tip %</Label>
         <BtnCon>
           {arr.map((item, index) => {
             if (item !== "custom") {
@@ -42,7 +42,6 @@ const Biggie = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
-  padding: 3.2rem;
 `;
 const LabelsDiv = styled.div`
   display: flex;

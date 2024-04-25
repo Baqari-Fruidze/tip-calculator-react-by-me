@@ -21,6 +21,10 @@ const Common = styled.div`
   border-radius: 25px 25px 0px 0px;
   background: #fff;
   box-shadow: 0px 32px 43px 0px rgba(79, 166, 175, 0.2);
+  padding: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
 `;
 const Header = styled.header`
   text-align: center;

@@ -16,7 +16,7 @@ export const TwoInputs = styled.input`
   line-height: normal;
   background-image: url(${(props) => props.icon});
   background-repeat: no-repeat;
-  padding: 0.8rem 1.7rem;
+  padding: 1rem 1.7rem;
   background-position: left 1.9rem bottom 1.4rem;
   border: none;
   background-color: #f3f9fa;
