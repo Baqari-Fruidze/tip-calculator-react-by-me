@@ -2,26 +2,44 @@ import Input from "./components/Input";
 import Result from "./components/Result";
 import styled from "styled-components";
 import logo from "/images/logo.svg";
+import { useState } from "react";
 
 function App() {
+  const [bill, setBill] = useState("");
+  const [people, setPeople] = useState("");
+  const [percent, setPercent] = useState("");
   return (
     <Parent>
       <Header>
         <img src={logo} alt="" />
       </Header>
       <Common>
-        <Input />
-        <Result />
+        <Input
+          bill={bill}
+          setBill={setBill}
+          people={people}
+          setPeople={setPeople}
+          percent={percent}
+          setPercent={setPercent}
+        />
+        <Result
+          bill={bill}
+          setBill={setBill}
+          people={people}
+          setPeople={setPeople}
+          percent={percent}
+          setPercent={setPercent}
+        />
       </Common>
     </Parent>
   );
 }
 const Parent = styled.div`
   margin: 0 auto;
-  min-height: 100vh;
+  height: 100vh;
   max-width: 55rem;
   @media (min-width: 90rem) {
-    max-width: 150rem;
+    max-width: 93rem;
   }
 `;
 const Common = styled.div`

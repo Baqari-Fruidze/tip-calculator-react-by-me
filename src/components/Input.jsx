@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import dollar from "/images/icon-dollar.svg";
 import person from "/images/icon-person.svg";
 import styled from "styled-components";
@@ -6,13 +6,37 @@ import { Label } from "../Styles/Label";
 import { TwoInputs } from "../Styles/TwoInputs";
 import { Buttons } from "../Styles/Buttons";
 
-export default function Input() {
+export default function Input({
+  bill,
+  setBill,
+  percent,
+  setPercent,
+  people,
+  setPeople,
+}) {
   const arr = ["5%", "10%", "15%", "25%", "50%", "custom"];
+
+  const moneyAmount = (event) => {
+    setBill(parseInt(event.target.value));
+  };
+  const personAmount = (event) => {
+    setPeople(parseInt(event.target.value));
+  };
+  const handleClick = (event) => {
+    setPercent(parseInt(event.target.textContent));
+  };
+  console.log({ people, bill, percent });
   return (
     <Biggie>
       <LabelsDiv>
         <Label>Bill</Label>
-        <TwoInputs type="text" placeholder="142.55" icon={dollar} />
+        <TwoInputs
+          type="text"
+          placeholder="142.55"
+          icon={dollar}
+          value={bill}
+          onChange={moneyAmount}
+        />
       </LabelsDiv>
       <div>
         <Label type={"select"}>Select Tip %</Label>
@@ -20,7 +44,7 @@ export default function Input() {
           {arr.map((item, index) => {
             if (item !== "custom") {
               return (
-                <Buttons key={index} $type={"default"}>
+                <Buttons key={index} $type={"default"} onClick={handleClick}>
                   {item}
                 </Buttons>
               );
@@ -32,7 +56,13 @@ export default function Input() {
       </div>
       <LabelsDiv>
         <Label>Number of People</Label>
-        <TwoInputs type="text" placeholder="5" icon={person} />
+        <TwoInputs
+          type="text"
+          placeholder="5"
+          icon={person}
+          value={people}
+          onChange={personAmount}
+        />
       </LabelsDiv>
     </Biggie>
   );
