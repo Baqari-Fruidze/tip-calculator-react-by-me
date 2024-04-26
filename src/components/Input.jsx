@@ -53,7 +53,10 @@ export default function Input({
         </BtnCon>
       </div>
       <LabelsDiv>
-        <Label>Number of People</Label>
+        <HidenSpanDiv>
+          <Label>Number of People</Label>
+          {people === 0 ? <HiddenSpan>Can’t be zero</HiddenSpan> : ""}
+        </HidenSpanDiv>
         <TwoInputs
           type="number"
           icon={person}
@@ -65,6 +68,19 @@ export default function Input({
   );
 }
 
+const HidenSpanDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+const HiddenSpan = styled.span`
+  color: #e17457;
+  text-align: right;
+  font-family: "Space Mono";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+`;
 const Biggie = styled.div`
   display: flex;
   flex-direction: column;

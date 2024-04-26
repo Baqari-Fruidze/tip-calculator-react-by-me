@@ -7,5 +7,5 @@ export const Label = styled.label`
   font-weight: 700;
   line-height: normal;
   margin-bottom: ${(props) => (props.type === "select" ? "1.6rem" : "0.6rem")};
-  display: block;
+  display: inline-block;
 `;
